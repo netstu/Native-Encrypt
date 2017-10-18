@@ -16,7 +16,13 @@ public class SecureUtil {
     }
 
     public static String decode(String data) {
-        return new String(decryptData(BaseApplication.getInstance(), Base64.decode(data, Base64.DEFAULT)));
+        String s;
+        try {
+            s = new String(decryptData(BaseApplication.getInstance(), Base64.decode(data, Base64.DEFAULT)));
+        } catch (Exception e) {
+            s = "";
+        }
+        return s;
     }
 
     public static String getSign(String data) {
@@ -39,11 +45,11 @@ public class SecureUtil {
         Log.i("Mainli", "tips: " + tips);
     }
 
-    native private static byte[] encryptData(Context context, byte[] data);
+    private native static byte[] encryptData(Context context, byte[] data);
 
-    native private static byte[] decryptData(Context context, byte[] data);
+    private native static byte[] decryptData(Context context, byte[] data);
 
-    native private static String getSign(Context context, String data);
+    private native static String getSign(Context context, String data);
 
     static {
         System.loadLibrary("secure-lib");

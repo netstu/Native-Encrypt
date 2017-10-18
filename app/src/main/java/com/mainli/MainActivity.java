@@ -73,6 +73,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 break;
         }
         resultText.setText(result);
+        input.setText(result);
     }
 
 
@@ -126,6 +127,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     }
 
     private String nativeDecode(String str) {
+        Log.i("Mainli", "nativeDecode: " + str);
         return SecureUtil.decode(str);
     }
 
