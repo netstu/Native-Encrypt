@@ -9,6 +9,7 @@
 #include <jni.h>
 #include <android/log.h>
 #include <string>
+#include <cstring>
 using namespace std;
 
 

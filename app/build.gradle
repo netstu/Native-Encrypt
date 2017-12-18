@@ -27,11 +27,13 @@ android {
     buildTypes {
         release {
             minifyEnabled true
+            signingConfig signingConfigs.mainli
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
         debug{
             minifyEnabled true
             signingConfig signingConfigs.mainli
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }
     externalNativeBuild {

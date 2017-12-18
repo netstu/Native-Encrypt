@@ -52,6 +52,6 @@ public class SecureUtil {
     private native static String getSign(Context context, String data);
 
     static {
-        System.loadLibrary("Libs-lib");
+        System.loadLibrary("Libs");
     }
 }
